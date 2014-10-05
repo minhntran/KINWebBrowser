@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KINWebBrowser"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "A full featured web browser module for your iOS apps."
 
   s.description  = <<-DESC
@@ -19,7 +19,8 @@ Pod::Spec.new do |s|
   s.resources = "Assets/*.png"
   s.requires_arc = true
   
-  s.dependency 'TUSafariActivity'
+
   s.dependency 'ARChromeActivity'
+  s.dependency 'TUSafariActivity', '~> 1.0.0'
 
 end
