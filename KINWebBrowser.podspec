@@ -18,6 +18,8 @@ Pod::Spec.new do |s|
   s.source_files  = 'KINWebBrowser', 'KINWebBrowser/**/*.{h,m}'
   s.resources = "Assets/*.png"
   s.requires_arc = true
+
+  s.frameworks = 'WebKit'
   
 
   s.dependency 'ARChromeActivity'

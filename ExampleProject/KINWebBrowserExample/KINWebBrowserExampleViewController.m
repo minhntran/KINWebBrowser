@@ -67,16 +67,16 @@ static NSString *const defaultAddress = @"http://www.apple.com/";
 
 #pragma mark - KINWebBrowserDelegate Protocol Implementation
 
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didBeginLoadingRequest:(NSURLRequest *)request {
-    NSLog(@"Began Loading Request: %@", request.URL);
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didStartLoadingURL:(NSURL *)URL {
+    NSLog(@"Started Loading URL : %@", URL);
 }
 
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFinishLoadingRequest:(NSURLRequest *)request {
-    NSLog(@"Finished Loading Request : %@", request.URL);
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFinishLoadingURL:(NSURL *)URL {
+    NSLog(@"Finished Loading URL : %@", URL);
 }
 
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFailToLoadRequest:(NSURLRequest *)request withError:(NSError *)error {
-    NSLog(@"Failed To Load Request : %@ With Error: %@", request.URL, error);
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFailToLoadURL:(NSURL *)URL withError:(NSError *)error {
+    NSLog(@"Failed To Load URL : %@ With Error: %@", URL, error);
 }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1453FA1643434A30B809DF01 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40569994F8ED4A0FB96EC6BA /* libPods.a */; };
+		3B57DAB719E11FAB00C499B5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B57DAB619E11FAB00C499B5 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		3BBECF2918A1E58D00A2499D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBECF2818A1E58D00A2499D /* Foundation.framework */; };
 		3BBECF2B18A1E58D00A2499D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBECF2A18A1E58D00A2499D /* CoreGraphics.framework */; };
 		3BBECF2D18A1E58D00A2499D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBECF2C18A1E58D00A2499D /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D66287F09CB3E898333BDB8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3B57DAB619E11FAB00C499B5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		3BBECF2518A1E58D00A2499D /* KINWebBrowserExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KINWebBrowserExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBECF2818A1E58D00A2499D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3BBECF2A18A1E58D00A2499D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,7 +58,7 @@
 		3BBECF6318A1EAB100A2499D /* KINWebBrowserExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserExampleViewController.m; sourceTree = "<group>"; };
 		3BBECF6418A1EAB100A2499D /* KINWebBrowserExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KINWebBrowserExampleViewController.xib; sourceTree = "<group>"; };
 		40569994F8ED4A0FB96EC6BA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		99271C859D3C4C9880D8C752 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E95061206B0428F84E5EAF94 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B57DAB719E11FAB00C499B5 /* WebKit.framework in Frameworks */,
 				3BBECF2B18A1E58D00A2499D /* CoreGraphics.framework in Frameworks */,
 				3BBECF2D18A1E58D00A2499D /* UIKit.framework in Frameworks */,
 				3BBECF2918A1E58D00A2499D /* Foundation.framework in Frameworks */,
@@ -90,7 +94,7 @@
 				3BBECF4718A1E58E00A2499D /* KINWebBrowserExampleTests */,
 				3BBECF2718A1E58D00A2499D /* Frameworks */,
 				3BBECF2618A1E58D00A2499D /* Products */,
-				99271C859D3C4C9880D8C752 /* Pods.xcconfig */,
+				F41A3D371A44A50919509CDE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +110,7 @@
 		3BBECF2718A1E58D00A2499D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3B57DAB619E11FAB00C499B5 /* WebKit.framework */,
 				3BBECF2818A1E58D00A2499D /* Foundation.framework */,
 				3BBECF2A18A1E58D00A2499D /* CoreGraphics.framework */,
 				3BBECF2C18A1E58D00A2499D /* UIKit.framework */,
@@ -158,6 +163,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F41A3D371A44A50919509CDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E95061206B0428F84E5EAF94 /* Pods.debug.xcconfig */,
+				0D66287F09CB3E898333BDB8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,7 +219,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KIN;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Kinwa, Inc.";
 				TargetAttributes = {
 					3BBECF3F18A1E58D00A2499D = {
@@ -280,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -338,7 +352,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -378,7 +391,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -410,7 +422,7 @@
 		};
 		3BBECF5218A1E58E00A2499D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99271C859D3C4C9880D8C752 /* Pods.xcconfig */;
+			baseConfigurationReference = E95061206B0428F84E5EAF94 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -424,7 +436,7 @@
 		};
 		3BBECF5318A1E58E00A2499D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99271C859D3C4C9880D8C752 /* Pods.xcconfig */;
+			baseConfigurationReference = 0D66287F09CB3E898333BDB8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -439,7 +451,6 @@
 		3BBECF5518A1E58E00A2499D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KINWebBrowserExample.app/KINWebBrowserExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -462,7 +473,6 @@
 		3BBECF5618A1E58E00A2499D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KINWebBrowserExample.app/KINWebBrowserExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

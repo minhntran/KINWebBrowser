@@ -1,6 +1,6 @@
 inhibit_all_warnings!
 
 xcodeproj 'KINWebBrowserExample.xcodeproj'
-platform :ios, :deployment_target => '7.0'
+platform :ios, :deployment_target => '8.0'
 
 pod "KINWebBrowser"

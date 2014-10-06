@@ -31,9 +31,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @class KINWebBrowserViewController;
-
 
 #pragma mark - Initialization Options
 
@@ -66,9 +66,9 @@ FOUNDATION_EXPORT NSString *const KINWebBrowserRestoresToolbarState;
 
 @protocol KINWebBrowserDelegate <NSObject>
 @optional
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didBeginLoadingRequest:(NSURLRequest *)request;
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFinishLoadingRequest:(NSURLRequest *)request;
-- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFailToLoadRequest:(NSURLRequest *)request withError:(NSError *)error;
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didStartLoadingURL:(NSURL *)URL;
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFinishLoadingURL:(NSURL *)URL;
+- (void)webBrowser:(KINWebBrowserViewController *)webBrowser didFailToLoadURL:(NSURL *)URL withError:(NSError *)error;
 @end
 
 
@@ -78,37 +78,52 @@ FOUNDATION_EXPORT NSString *const KINWebBrowserRestoresToolbarState;
  For convenience, two sets of static initializers are available.
  
  */
-@interface KINWebBrowserViewController : UIViewController <UIWebViewDelegate>
+@interface KINWebBrowserViewController : UIViewController <WKNavigationDelegate, UIWebViewDelegate>
 
 #pragma mark - Public Properties
 
 @property (nonatomic, weak) id <KINWebBrowserDelegate> delegate;
 
-// The main and only UIWebView
-@property (nonatomic, strong) UIWebView *webView;
-
 // The main and only UIProgressView
 @property (nonatomic, strong) UIProgressView *progressView;
 
+// The web views
+// Depending on the version of iOS, one of these will be set
+@property (nonatomic, strong) WKWebView *wkWebView;
+@property (nonatomic, strong) UIWebView *uiWebView;
+
+- (id)initWithOptions:(NSDictionary *)options;
+- (id)initWithOptions:(NSDictionary *)options configuration:(WKWebViewConfiguration *)configuration;
 
 #pragma mark - Static Initializers
 
-// Initializes a basic KINWebBrowserViewController instance for push onto navigation stack
-// Ideal for use with UINavigationController pushViewController:animated: or initWithRootViewController:
+/*
+ Initialize a basic KINWebBrowserViewController instance for push onto navigation stack
+ 
+ Ideal for use with UINavigationController pushViewController:animated: or initWithRootViewController:
+ 
+ Optionally specify KINWebBrowser options or WKWebConfiguration
+ */
+
 + (KINWebBrowserViewController *)webBrowser;
-
-// Initializes a KINWebBrowserViewController instance with custom options
-// Ideal for use with UINavigationController pushViewController:animated: or initWithRootViewController:
 + (KINWebBrowserViewController *)webBrowserWithOptions:(NSDictionary *)options;
++ (KINWebBrowserViewController *)webBrowserWithOptions:(NSDictionary *)options configuration:(WKWebViewConfiguration *)configuration;
 
 
-// Initializes a UINavigationController with a KINWebBrowserViewController for modal presentation
-// Ideal for use with presentViewController:animated:
+/*
+ Initialize a UINavigationController with a KINWebBrowserViewController for modal presentation.
+ 
+ Ideal for use with presentViewController:animated:
+ 
+ Optionally specify KINWebBrowser options or WKWebConfiguration
+ */
+
 + (UINavigationController *)navigationControllerWithWebBrowser;
-
-// Initializes a UINavigationController with a KINWebBrowserViewController with custom options
-// Ideal for use with presentViewController:animated:
 + (UINavigationController *)navigationControllerWithWebBrowserWithOptions:(NSDictionary *)options;
++ (UINavigationController *)navigationControllerWithWebBrowserWithOptions:(NSDictionary *)options configuration:(WKWebViewConfiguration *)configuration;
+
+
+
 
 #pragma mark - Public Interface
 
