@@ -55,8 +55,15 @@ static NSString *const defaultAddress = @"http://www.apple.com/";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.title = @"";
+    
     [self.navigationController setToolbarHidden:YES];
     [self.navigationController setNavigationBarHidden:YES];
+    
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.toolbar.translucent = YES;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +90,8 @@ static NSString *const defaultAddress = @"http://www.apple.com/";
 #pragma mark - IBActions
 
 - (IBAction)pushButtonPressed:(id)sender {
-    KINWebBrowserViewController *webBrowser = [KINWebBrowserViewController webBrowser];
+    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
+    KINWebBrowserViewController *webBrowser = [KINWebBrowserViewController webBrowserWithConfiguration:config];
     [webBrowser setDelegate:self];
     [self.navigationController pushViewController:webBrowser animated:YES];
     [webBrowser loadURLString:defaultAddress];
@@ -93,6 +101,7 @@ static NSString *const defaultAddress = @"http://www.apple.com/";
     UINavigationController *webBrowserNavigationController = [KINWebBrowserViewController navigationControllerWithWebBrowser];
     KINWebBrowserViewController *webBrowser = [webBrowserNavigationController rootWebBrowserViewController];
     [webBrowser setDelegate:self];
+    webBrowser.tintColor = [UIColor purpleColor];
     [self presentViewController:webBrowserNavigationController animated:YES completion:nil];
 
     [webBrowser loadURLString:defaultAddress];

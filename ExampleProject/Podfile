@@ -3,4 +3,6 @@ inhibit_all_warnings!
 xcodeproj 'KINWebBrowserExample.xcodeproj'
 platform :ios, :deployment_target => '8.0'
 
-pod "KINWebBrowser"
+
+pod 'ARChromeActivity'
+pod 'TUSafariActivity', '~> 1.0.0'
