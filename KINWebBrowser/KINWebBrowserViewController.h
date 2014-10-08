@@ -104,14 +104,16 @@
 + (UINavigationController *)navigationControllerWithWebBrowserWithConfiguration:(WKWebViewConfiguration *)configuration NS_AVAILABLE_IOS(8_0);
 
 
+
 @property (nonatomic, strong) UIColor *tintColor;
+@property (nonatomic, strong) UIColor *barTintColor;
 @property (nonatomic, assign) BOOL actionButtonHidden;
 @property (nonatomic, assign) BOOL showsURLInNavigationBar;
 @property (nonatomic, assign) BOOL showsPageTitleInNavigationBar;
 
 #pragma mark - Public Interface
 
-// Loads a NSURL to webView
+// Load a NSURL to webView
 // Can be called any time after initialization
 - (void)loadURL:(NSURL *)URL;
 
