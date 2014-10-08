@@ -59,27 +59,22 @@ pod 'KINWebBrowser'
 Customizing the User Interface
 ------------------------
 
-```@property (nonatomic, strong) UIColor *tintColor;```
+**Tint Color**
 
-The tint color to apply to the bar items and progress view.
+The tint color of the toolbars and toolbar items can be customized.
 
-```@property (nonatomic, assign) BOOL actionButtonHidden;```
+```
+webBrowserViewController.tintColor = [UIColor blueColor];
+webBrowserViewController.barTintColor = [UIColor blackColor];
+```
 
-Shows the action button. When enabled the action button launches a UIActivityViewController with the URL to copy to the clipboard, share, or launch Safari or Google Chrome. This displays in a UIPopoverController on iPad devices.
+**Title Bar Content** 
 
-
-```@property (nonatomic, assign) BOOL showsURLInNavigationBar;```
-
-Once loading is complete, shows the <title> of the URL in the UINavigationBar
-
-```@property (nonatomic, assign) BOOL showsPageTitleInNavigationBar;```
-
-During loading, shows the URL in the UINavigationBar
-
-
-
-
-
+The URL can be shown in the `UINavigationBar` while loading. The <title> of the page can be shown when loading completes.
+```
+webBrowserViewController.showsURLInNavigationBar = NO;
+webBrowserViewController.showsPageTitleInNavigationBar = YES;
+```
 
 
 Implementing `KINWebBrowserDelegate` Protocol

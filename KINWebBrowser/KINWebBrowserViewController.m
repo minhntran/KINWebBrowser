@@ -286,8 +286,8 @@
       withError:(NSError *)error {
     if(webView == self.wkWebView) {
         [self updateToolbarState];
-        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:withError:)]) {
-            [self.delegate webBrowser:self didFailToLoadURL:self.wkWebView.URL withError:error];
+        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:error:)]) {
+            [self.delegate webBrowser:self didFailToLoadURL:self.wkWebView.URL error:error];
         }
     }
 }
@@ -296,8 +296,8 @@
       withError:(NSError *)error {
     if(webView == self.wkWebView) {
         [self updateToolbarState];
-        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:withError:)]) {
-            [self.delegate webBrowser:self didFailToLoadURL:self.wkWebView.URL withError:error];
+        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:error:)]) {
+            [self.delegate webBrowser:self didFailToLoadURL:self.wkWebView.URL error:error];
         }
     }
 }
