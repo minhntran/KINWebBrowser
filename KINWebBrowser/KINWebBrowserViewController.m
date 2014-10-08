@@ -204,6 +204,12 @@
     [self.navigationController.toolbar setTintColor:tintColor];
 }
 
+- (void)setBarTintColor:(UIColor *)barTintColor {
+    _barTintColor = barTintColor;
+    [self.navigationController.navigationBar setBarTintColor:barTintColor]
+    [self.navigationController.toolbar setBarTintColor:barTintColor];
+}
+
 - (void)setActionButtonHidden:(BOOL)actionButtonHidden {
     _actionButtonHidden = actionButtonHidden;
     [self updateToolbarState];
