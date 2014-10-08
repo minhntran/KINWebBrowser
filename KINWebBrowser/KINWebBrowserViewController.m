@@ -115,7 +115,7 @@
         }
         
         self.actionButtonHidden = NO;
-        self.showsURLInNavigationBar = YES;
+        self.showsURLInNavigationBar = NO;
         self.showsPageTitleInNavigationBar = YES;
         
     }
@@ -256,8 +256,8 @@
             
             [self fakeProgressBarStopLoading];
         }
-        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:withError:)]) {
-            [self.delegate webBrowser:self didFailToLoadURL:self.uiWebView.request.URL withError:error];
+        if([self.delegate respondsToSelector:@selector(webBrowser:didFailToLoadURL:error:)]) {
+            [self.delegate webBrowser:self didFailToLoadURL:self.uiWebView.request.URL error:error];
         }
     }
 }
